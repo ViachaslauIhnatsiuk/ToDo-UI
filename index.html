@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ToDo UI</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<main class="page">
+		<div class="todo__body">
+			<div class="todo__title">HIGH</div>
+			<div class="todo__high-priority">
+				<form class="todo__add-task" onsubmit="return false">
+					<input type="text" class="todo__add" placeholder="Добавить важных дел">
+					<button class="todo__add-icon"><img src="img/add.svg" alt="add"></button>
+				</form>
+				<div class="todo__task">
+					<label class="todo__label">
+						<input type="checkbox" class="todo__added">
+						<span class="todo__checkbox"></span>
+					</label>
+					<p class="todo__text"></p>
+					<img class="todo__delete-icon" src="img/remove.svg" alt="remove">
+				</div>
+			</div>
+			<div class="todo__title">LOW</div>
+			<div class="todo__low-priority">
+				<form class="todo__add-task" onsubmit="return false">
+					<input type="text" class="todo__add" placeholder="Добавить">
+					<button class="todo__add-icon"><img src="img/add.svg" alt="add"></button>
+				</form>
+			</div>
+		</div>
+	</main>
+	<script type="module" src="script.js"></script>
+	<script type="module" src="view.js"></script>
+</body>
+
+</html>
