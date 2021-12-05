@@ -3,7 +3,6 @@
 import { DELETE_TASK, ADD_TASK, CHECKED, TASK_CLONE, INPUT, } from './view.js';
 
 
-
 function deleteTask() {
 	this.parentElement.remove();
 }
@@ -26,13 +25,13 @@ for (let task of CHECKED) {
 function addTask() {
 	let cloneTask = TASK_CLONE.cloneNode(true);
 	let deleteClone = cloneTask.querySelector('.todo__delete-icon');
-	let ckeckClone = cloneTask.querySelector('.todo__checkbox');
+	let checkClone = cloneTask.querySelector('.todo__checkbox');
 	deleteClone.addEventListener('click', deleteTask);
-	ckeckClone.addEventListener('click', checkTask);
+	checkClone.addEventListener('click', checkTask);
 	this.parentElement.parentElement.append(cloneTask);
-	cloneTask.querySelector('.todo__text').innerHTML = this.parentElement.firstElementChild.value;
+	cloneTask.querySelector('.todo__text').textContent = this.parentElement.firstElementChild.value;
 	INPUT.forEach(INPUT => INPUT.form.reset());
-	if (cloneTask.querySelector('.todo__text').innerHTML === '') return;
+	if (cloneTask.querySelector('.todo__text').textContent === '') return;
 	cloneTask.classList.add('todo__task-new');
 }
 
